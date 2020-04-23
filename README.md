@@ -26,7 +26,8 @@ ffff:4369927
 Why only 4 characters? Because wordlist size could be 2/3 times larger - **it's a balance between speed and size**.
 
 # Wordlist
-### Want bigger wordlist? Go to https://hashkiller.io/listmanager and download some.
+## Want bigger wordlist?
+Go to https://hashkiller.io/listmanager and download some.\
 After downloading you need to use `scripts/hashkiller2batkill.py`.\
 \
 **How to use it:**\
@@ -36,7 +37,7 @@ wordlist = 'my-wordlist.txt'
 ```
 Just replace `my-wordlist.txt` with file you previously [downloaded](https://hashkiller.io/listmanager) and then run: `py hashkiller2batkill.py` while you're in `scripts` folder. It will generate second wordlist for `MD5-BatKill`.
 
-### Or maybe you already have a wordlist that looks like that:
+## Or maybe you already have a wordlist that looks like that:
 ```
 password
 123456
