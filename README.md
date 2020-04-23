@@ -6,6 +6,11 @@
 	<img alt="Screenshot_1" src="https://user-images.githubusercontent.com/48186982/80112573-8b25b100-8581-11ea-92a4-535e4c759919.png">
 </p>
 
+# Usage
+It's only for Windows. You can use **GUI** or **CLI** version:
+* `md5-batkill.bat` **(CLI)** - double-click to run, paste hash and hit enter.
+* `GUI.exe` **(GUI)** - double-click to run, paste hash into first input, select method (go to bottom of `README.md`) and click '*Crack*' button.
+
 # Cracking
 It uses an optimized wordlist. Here is how `wordlist.lst` looks:
 ```
@@ -49,5 +54,5 @@ Just replace `my-wordlist.txt` with file you want to make it readable to `MD5-Ba
 
 # Methods
 There are two methods:
-1. `core\md5.exe -l -d` Faster, don't need to install additional packages. Hasher is from https://www.fourmilab.ch/md5/.
-2. `py core/md5.py` Slower, needs [python3](https://www.python.org/downloads/) to be installed.
+* `core\md5.exe -l -d` Faster, don't need to install additional packages. Hasher is from https://www.fourmilab.ch/md5/.
+* `py core/md5.py` Slower, needs [python3](https://www.python.org/downloads/) to be installed.
