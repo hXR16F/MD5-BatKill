@@ -25,7 +25,7 @@ ffff:4369927
 `fffe` and `ffff` are the first four characters of hash. So instead of hashing entire dictionary, it only picks some words and then it's checking for valid hash. It's **a lot faster** than hashing every word.\
 Why only 4 characters? Because wordlist size could be 2/3 times larger - **it's a balance between speed and size**.
 
-# Wordlist
+# Wordlists
 ## Want bigger wordlist?
 Go to https://hashkiller.io/listmanager and download some.\
 After downloading you need to use `scripts/hashkiller2batkill.py`.\
