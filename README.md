@@ -6,6 +6,10 @@
 	<img alt="Screenshot_1" src="https://user-images.githubusercontent.com/48186982/80112573-8b25b100-8581-11ea-92a4-535e4c759919.png">
 </p>
 
+# Installation
+`git clone https://github.com/hXR16F/MD5-BatKill.git`\
+Or click **Download ZIP**.
+
 # Usage
 It's only for Windows. You can use **GUI** or **CLI** version:
 * `md5-batkill.bat` **(CLI)** - double-click to run, paste hash and hit enter.
