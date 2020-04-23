@@ -57,3 +57,6 @@ Just replace `my-wordlist.txt` with file you want to make it readable to `MD5-Ba
 There are two methods:
 * `core\md5.exe -l -d` Faster, don't need to install additional packages. Hasher is from https://www.fourmilab.ch/md5/.
 * `py core/md5.py` Slower, needs [python3](https://www.python.org/downloads/) to be installed.
+
+# Donate
+If you support my work or like my projects, [you can donate me some money](https://github.com/hXR16F/donate/blob/master/README.md). Thank you 💙
