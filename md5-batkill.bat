@@ -4,7 +4,45 @@
 @echo off
 mode 60,40 & title MD5-BatKill & color 07
 setlocal EnableDelayedExpansion
-call cl.bat & rem https://github.com/hXR16F/cl
+call core/cl.bat & rem https://github.com/hXR16F/cl
+
+if exist "input.ini" (
+	set line=1
+	for /f "tokens=*" %%i in (input.ini) do (
+		if !line! equ 1 set "hash_input=%%i"
+		if !line! equ 2 (
+			if "%%i" equ "1" set "method=core\md5.exe -l -d"
+			if "%%i" equ "2" set "method=py core/md5.py "
+		)
+		set /a line+=1
+	)
+	del /f /q "input.ini" >nul
+
+	call :getlen !hash_input!
+	if not !l! equ 32 (
+		echo Invalid hash D:> "output.txt"
+		exit /b
+	)
+
+	find /i "!hash_input:~0,4!:" wordlist.lst > "temp1"
+	for /f "tokens=1,2 delims=:" %%a in (temp1) do (
+		set pass=%%b
+		if not "!pass!" equ "" (
+			for /f %%i in ('!method!!pass!') do (
+				if /i "!hash_input!" equ "%%i" (
+					echo !hash_input!:!pass!>> "found.txt"
+					echo !pass!> "output.txt"
+				)
+			)
+		)
+	)
+	if not exist "output.txt" echo Not found :/> "output.txt"
+	del /f /q temp1 >nul
+	exit /b
+)
+
+set "method=core\md5.exe -l -d"
+REM set "method=py core/md5.py "
 
 set "line=%fg`black%============================================================%`r% "
 
@@ -23,15 +61,16 @@ set "line=%fg`black%============================================================
 		echo.
 		goto :main
 	)
-	find /i "!hash_input:~0,4!:" wordlist.lst > "temp1"
 
+	find /i "!hash_input:~0,4!:" wordlist.lst > "temp1"
 	for /f "tokens=1,2 delims=:" %%a in (temp1) do (
-		set hash_short=%%a
 		set pass=%%b
-		for /f %%i in ('call md5.exe -d!pass! -l') do (
-			if /i "!hash_input!" equ "%%i" (
-				echo !hash_input!:!pass!>> "found.txt"
-				echo !pass!> "temp2"
+		if not "!pass!" equ "" (
+			for /f %%i in ('%method%!pass!') do (
+				if /i "!hash_input!" equ "%%i" (
+					echo !hash_input!:!pass!>> "found.txt"
+					echo !pass!> "temp2"
+				)
 			)
 		)
 	)
