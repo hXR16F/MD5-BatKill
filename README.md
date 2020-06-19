@@ -51,7 +51,7 @@ dragon
 So now you will need `scripts/wordlist2batkill.py`.\
 \
 **How to use it:**\
-Open `scripts/wordlist2batkill.py` via notepad (or another text editor) and look at first line:
+Open `scripts/wordlist2batkill.py` via notepad (or another text editor) and look at second line:
 ```python
 wordlist = 'my-wordlist.txt'
 ```
