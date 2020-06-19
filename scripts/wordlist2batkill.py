@@ -2,7 +2,6 @@ from hashlib import md5
 wordlist = 'my-wordlist.txt'
 wordlist_save_as = "dump.txt"
 
-errors = 0
 with open(wordlist_save_as, 'w') as f:
     for line in open(wordlist, 'r'):
         line_parsed = line.replace("\n", "")
